@@ -83,6 +83,7 @@ ConvNeXt-B	74.43%
 전체 gradient 에너지의 상위 20%를 차지하는 최소 픽셀 수를 ERF 크기로 정의합니다.
 
 실행 예시
+
 python erf_compute.py \
   --model_family replknet \
   --fine_tuned_weight_name weights/replknet_31B1K384_CUB.pth \
