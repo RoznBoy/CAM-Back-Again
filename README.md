@@ -40,16 +40,17 @@ tar -xvzf CUB_200_2011.tgz
 cp -r CUB_200_2011/images datasets/cub-200-2011
 
 🚀 1. WSOL Heatmap 생성
-'''bash
-RepLKNet
+```bash
+# RepLKNet
 python generate_heatmap.py \
   --model_family replknet \
   --fine_tuned_weight_name weights/replknet_31B1K384_CUB.pth \
   --test_dataset cub-200-2011 \
   --heatmap_output heatmap_replk_cam \
   --localization_method cam
-'''
+```
 
+``` bash
 ConvNeXt
 python generate_heatmap.py \
   --model_family convnext \
@@ -57,6 +58,7 @@ python generate_heatmap.py \
   --test_dataset cub-200-2011 \
   --heatmap_output heatmap_convnext_cam \
   --localization_method cam
+```
 
 🚀 2. WSOL 성능 평가 (MaxBoxAcc)
 RepLKNet
@@ -90,20 +92,22 @@ ConvNeXt-B	74.43%
 전체 gradient 에너지의 상위 20%를 차지하는 최소 픽셀 수를 ERF 크기로 정의합니다.
 
 실행 예시
-
+``` bash
 python erf_compute.py \
   --model_family replknet \
   --fine_tuned_weight_name weights/replknet_31B1K384_CUB.pth \
   --test_dataset cub-200-2011/images \
   --num_samples 200 \
   --output erf_sizes_replknet.npy
-
+```
+``` bash
 python erf_compute.py \
   --model_family convnext \
   --fine_tuned_weight_name weights/convnext_base_384_in22ft1k_CUB.pth \
   --test_dataset cub-200-2011/images \
   --num_samples 200 \
   --output erf_sizes_convnext.npy
+```
 
 ✔️ ERF Result Summary
 Model	ERF Mean	ERF Max
@@ -116,10 +120,12 @@ ConvNeXt	5032	9232
 ➡️ ERF 분포도 매우 넓어 설명력이 부족함.
 
 🚀 4. ERF vs WSOL 산점도 분석
+``` bash
 python analysis_erf_vs_wsol.py \
   --config erf_wsol_config.json \
   --save_fig erf_vs_wsol.png \
   --show
+```
 
 
 결과:
@@ -133,8 +139,8 @@ ERF 크기는 WSOL 성능을 설명하지 못함
 ➡️ Feature map quality가 진짜 원인임을 재현 실험이 뒷받침.
 
 train_wsol.py 실행 예시
-
-ConvNeXt, 384, 100 epoch, light aug
+``` bash
+# ConvNeXt, 384, 100 epoch, light aug
 python train_wsol.py \
   --model_family convnext \
   --epochs 50 \
@@ -142,7 +148,8 @@ python train_wsol.py \
   --input_size 384 \
   --aug_mode light \
   --exp_name conv_r384_e100_lr1e4_light
-
+```
+``` bash
 RepLKNet, 384, 100 epoch, light aug
 python train_wsol.py \
   --model_family replknet \
@@ -151,3 +158,4 @@ python train_wsol.py \
   --input_size 384 \
   --aug_mode light \
   --exp_name replk_r384_e100_lr5e5_light
+```
