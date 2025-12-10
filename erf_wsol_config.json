@@ -1,0 +1,12 @@
+[
+{
+"name": "RepLKNet CAM",
+"erf_path": "erf_sizes_replknet.npy",
+"maxboxacc": 0.8968
+},
+{
+"name": "ConvNeXt CAM",
+"erf_path": "erf_sizes_convnext.npy",
+"maxboxacc": 0.7443
+}
+]
