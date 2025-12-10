@@ -40,6 +40,7 @@ tar -xvzf CUB_200_2011.tgz
 cp -r CUB_200_2011/images datasets/cub-200-2011
 
 🚀 1. WSOL Heatmap 생성
+'''bash
 RepLKNet
 python generate_heatmap.py \
   --model_family replknet \
@@ -47,6 +48,7 @@ python generate_heatmap.py \
   --test_dataset cub-200-2011 \
   --heatmap_output heatmap_replk_cam \
   --localization_method cam
+'''
 
 ConvNeXt
 python generate_heatmap.py \
