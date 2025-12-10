@@ -9,15 +9,15 @@
 
 본 저장소에서는 다음을 수행합니다:
 
-RepLKNet / ConvNeXt의 CAM 기반 WSOL 성능(MaxBoxAcc) 재현
+- RepLKNet / ConvNeXt의 CAM 기반 WSOL 성능(MaxBoxAcc) 재현
 
-Gradient 기반 ERF(Effective Receptive Field) 계산 코드 직접 구현
+- Gradient 기반 ERF(Effective Receptive Field) 계산 코드 직접 구현
 
-ERF vs WSOL 관계 분석 (산점도 + 회귀 분석)
+- ERF vs WSOL 관계 분석 (산점도 + 회귀 분석)
 
-SLaK의 strip-conv 구조 기반 십자형 ERF 모양 보정(backbone 재구현)
+- SLaK의 strip-conv 구조 기반 십자형 ERF 모양 보정(backbone 재구현)
 
-다양한 파라미터 실험 및 자동 수집 파이프라인 구축
+- 다양한 파라미터 실험 및 자동 수집 파이프라인 구축
 
 본 리포지토리는 CAM-Back-Again 논문 코드를 기반으로 한 재현/확장 버전입니다.
 재현을 진행하기 전에, 먼저 아래 원본 저장소를 클론한 뒤 본 리포지토리의 스크립트와 코드를 추가·수정하여 사용합니다.
@@ -130,8 +130,9 @@ ERF 크기는 WSOL 성능을 설명하지 못함
 
 ➡️ Feature map quality가 진짜 원인임을 재현 실험이 뒷받침.
 
-train_wsol.py 예시 실행
-# ConvNeXt, 384, 100 epoch, light aug
+train_wsol.py 실행 예시
+
+ConvNeXt, 384, 100 epoch, light aug
 python train_wsol.py \
   --model_family convnext \
   --epochs 50 \
@@ -140,7 +141,7 @@ python train_wsol.py \
   --aug_mode light \
   --exp_name conv_r384_e100_lr1e4_light
 
-# RepLKNet, 384, 100 epoch, light aug
+RepLKNet, 384, 100 epoch, light aug
 python train_wsol.py \
   --model_family replknet \
   --epochs 50 \
