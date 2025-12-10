@@ -24,7 +24,7 @@ SLaK의 strip-conv 구조 기반 십자형 ERF 모양 보정(backbone 재구현)
 
 git clone https://github.com/snskysk/CAM-Back-Again.git
 cd CAM-Back-Again
-# 이후 이 리포지토리에서 제공하는 코드와 스크립트를 덮어쓰기/추가
+이후 이 리포지토리에서 제공하는 코드와 스크립트를 덮어쓰기/추가
 
 ⚙️ Environment Setup
 conda create -n cam_repro python=3.10 -y
