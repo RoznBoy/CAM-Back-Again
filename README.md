@@ -28,17 +28,18 @@ cd CAM-Back-Again
 ~~~
 
 ⚙️ Environment Setup
+~~~ bash
 conda create -n cam_repro python=3.10 -y
 conda activate cam_repro
 
 pip install torch torchvision timm tqdm numpy matplotlib pandas
-
+~~~
 
 Dataset 준비:
-
+~~~bash
 wget https://data.caltech.edu/records/65de6-vp158/files/CUB_200_2011.tgz
 tar -xvzf CUB_200_2011.tgz
-cp -r CUB_200_2011/images datasets/cub-200-2011
+~~~
 
 #🚀 1. WSOL Heatmap 생성
 ```bash
