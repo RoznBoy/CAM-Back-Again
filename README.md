@@ -3,11 +3,9 @@
 
 이 저장소는 CVPR 2024 논문
 “CAM Back Again: Large Kernel CNNs from a Weakly Supervised Localization Perspective”
-의 핵심 실험을 **완전히 재현(Reproduction)**하고,
-논문의 주장 —
+의 핵심 실험을 재현(Reproduction)하고,
 
-“대형 커널 CNN의 WSOL 성능은 ERF가 아니라 Feature Map Quality 때문이다.”
-— 가 실제로 성립하는지를 검증하는 프로젝트입니다.
+논문의 주장 —“대형 커널 CNN의 WSOL 성능은 ERF가 아니라 Feature Map Quality 때문이다.”— 가 실제로 성립하는지를 검증하는 프로젝트입니다.
 
 본 저장소에서는 다음을 수행합니다:
 
@@ -20,6 +18,13 @@ ERF vs WSOL 관계 분석 (산점도 + 회귀 분석)
 SLaK의 strip-conv 구조 기반 십자형 ERF 모양 보정(backbone 재구현)
 
 다양한 파라미터 실험 및 자동 수집 파이프라인 구축
+
+본 리포지토리는 CAM-Back-Again 논문 코드를 기반으로 한 재현/확장 버전입니다.
+재현을 진행하기 전에, 먼저 아래 원본 저장소를 클론한 뒤 본 리포지토리의 스크립트와 코드를 추가·수정하여 사용합니다.
+
+git clone https://github.com/snskysk/CAM-Back-Again.git
+cd CAM-Back-Again
+# 이후 이 리포지토리에서 제공하는 코드와 스크립트를 덮어쓰기/추가
 
 ⚙️ Environment Setup
 conda create -n cam_repro python=3.10 -y
