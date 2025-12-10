@@ -1,4 +1,3 @@
-# CAM-Back-Again
 # 📝 Overview
 
 이 저장소는 CVPR 2024 논문
@@ -39,7 +38,7 @@ wget https://data.caltech.edu/records/65de6-vp158/files/CUB_200_2011.tgz
 tar -xvzf CUB_200_2011.tgz
 cp -r CUB_200_2011/images datasets/cub-200-2011
 
-🚀 1. WSOL Heatmap 생성
+#🚀 1. WSOL Heatmap 생성
 ```bash
 # RepLKNet
 python generate_heatmap.py \
@@ -60,7 +59,7 @@ python generate_heatmap.py \
   --localization_method cam
 ```
 
-🚀 2. WSOL 성능 평가 (MaxBoxAcc)
+# 🚀 2. WSOL 성능 평가 (MaxBoxAcc)
 RepLKNet
 python wsol_eval.py \
   --np_root np_heatmap_replk_cam \
@@ -85,7 +84,7 @@ ConvNeXt-B	74.43%
 
 → RepLKNet의 CAM이 전역적으로 객체 전체를 활성화한다는 증거.
 
-🚀 3. ERF 계산 (Gradient-based)
+# 🚀 3. ERF 계산 (Gradient-based)
 
 코드(erf_compute.py)는 입력 gradient로부터 saliency map을 만들고,
 
@@ -119,7 +118,7 @@ ConvNeXt	5032	9232
 
 ➡️ ERF 분포도 매우 넓어 설명력이 부족함.
 
-🚀 4. ERF vs WSOL 산점도 분석
+# 🚀 4. ERF vs WSOL 산점도 분석
 ``` bash
 python analysis_erf_vs_wsol.py \
   --config erf_wsol_config.json \
