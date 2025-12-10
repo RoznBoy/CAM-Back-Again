@@ -124,3 +124,22 @@ R² ≈ 0
 ERF 크기는 WSOL 성능을 설명하지 못함
 
 ➡️ Feature map quality가 진짜 원인임을 재현 실험이 뒷받침.
+
+train_wsol.py 예시 실행
+# ConvNeXt, 384, 100 epoch, light aug
+python train_wsol.py \
+  --model_family convnext \
+  --epochs 50 \
+  --lr 1e-4 \
+  --input_size 384 \
+  --aug_mode light \
+  --exp_name conv_r384_e100_lr1e4_light
+
+# RepLKNet, 384, 100 epoch, light aug
+python train_wsol.py \
+  --model_family replknet \
+  --epochs 50 \
+  --lr 5e-5 \
+  --input_size 384 \
+  --aug_mode light \
+  --exp_name replk_r384_e100_lr5e5_light
