@@ -21,9 +21,11 @@
 본 리포지토리는 CAM-Back-Again 논문 코드를 기반으로 한 재현/확장 버전입니다.
 재현을 진행하기 전에, 먼저 아래 원본 저장소를 클론한 뒤 본 리포지토리의 스크립트와 코드를 추가·수정하여 사용합니다.
 
+~~~bash
 git clone https://github.com/snskysk/CAM-Back-Again.git
 cd CAM-Back-Again
-이후 이 리포지토리에서 제공하는 코드와 스크립트를 덮어쓰기/추가
+# 이후 이 리포지토리에서 제공하는 코드와 스크립트를 덮어쓰기/추가
+~~~
 
 ⚙️ Environment Setup
 conda create -n cam_repro python=3.10 -y
